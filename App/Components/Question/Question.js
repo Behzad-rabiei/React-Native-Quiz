@@ -1,15 +1,6 @@
-import React, {Component} from 'react';
-import {View, Text} from 'react-native';
+import React from 'react';
+import {Text} from 'react-native';
 import styles from './styles';
-import computers from '../../data/computers';
-class Question extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.text}>{computers[0].question}</Text>
-      </View>
-    );
-  }
-}
 
+const Question = ({question}) => <Text style={styles.text}>{question}</Text>;
 export default Question;
