@@ -11,7 +11,12 @@
   },
   "dependencies": {
     "react": "16.11.0",
-    "react-native": "0.62.0"
+    "react-native": "0.62.0",
+    "react-native-color": "0.0.10",
+    "react-native-extended-stylesheet": "^0.12.0",
+    "react-redux": "^7.2.0",
+    "redux": "^4.0.5",
+    "redux-logger": "^3.0.6"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
