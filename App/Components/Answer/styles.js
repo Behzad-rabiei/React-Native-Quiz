@@ -12,7 +12,7 @@ export default EStyleSheet.create({
     width: '46%',
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: 30,
+    marginTop: 20,
     backgroundColor: '$answer',
     paddingVertical: 20,
   },
