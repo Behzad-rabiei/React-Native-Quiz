@@ -6,4 +6,9 @@ export default EStyleSheet.create({
     backgroundColor: 'deepskyblue',
     paddingHorizontal: 20,
   },
+  safeArea: {
+    flex: 1,
+    marginTop: 100,
+    justifyContent: 'space-between',
+  },
 });
