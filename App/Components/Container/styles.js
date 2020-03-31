@@ -4,5 +4,6 @@ export default EStyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'deepskyblue',
+    paddingHorizontal: 20,
   },
 });
