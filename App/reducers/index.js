@@ -2,6 +2,7 @@ import {
   SET_TOTALCOUNT,
   CORRECTCOUNT_PLUS,
   ACTIVE_QUESTION_INDEX_PLUS,
+  RESET_ACTIVE_QUESTION_INDEX,
 } from '../actions/actionsType';
 
 const initialState = {
@@ -28,6 +29,12 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         activeQuestionIndex: state.activeQuestionIndex + 1,
+      };
+    }
+    case RESET_ACTIVE_QUESTION_INDEX: {
+      return {
+        ...state,
+        activeQuestionIndex: 0,
       };
     }
     default:
