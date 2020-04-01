@@ -5,6 +5,7 @@ import {Container, styles} from '../Components/Container';
 import {Question} from '../Components/Question';
 import {Answer} from '../Components/Answer';
 import {CorrectTotal} from '../Components/CorrectTotal';
+import {setTotalCount} from '../actions/index';
 import computers from '../data/computers';
 
 const question = computers[0].question;
@@ -12,6 +13,9 @@ const answers = computers[0].answers;
 
 class Home extends Component {
   render() {
+    const {totalCount, correctCount, dispatch} = this.props;
+    dispatch(setTotalCount(computers.length));
+
     return (
       <Container>
         <StatusBar barStyle="dark-content" />
@@ -20,16 +24,17 @@ class Home extends Component {
             <Question question={question} />
             <Answer answers={answers} />
           </View>
-          <CorrectTotal totalCount={0} />
+          <CorrectTotal totalCount={`${correctCount}/${totalCount}`} />
         </SafeAreaView>
       </Container>
     );
   }
 }
 const mapStateToProps = (state) => {
-  const {totalCount} = state;
+  const {totalCount, correctCount} = state;
   return {
     totalCount,
+    correctCount,
   };
 };
 
