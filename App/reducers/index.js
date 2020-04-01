@@ -1,4 +1,5 @@
 import {SET_TOTALCOUNT, CORRECTCOUNT_PLUS} from '../actions/actionsType';
+
 const initialState = {
   correctCount: 0,
   totalCount: 0,
@@ -19,6 +20,8 @@ const rootReducer = (state = initialState, action) => {
         correctCount: state.correctCount + 1,
       };
     }
+    default:
+      return state;
   }
 };
 

@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {SafeAreaView, StatusBar, View} from 'react-native';
-import {Container} from '../Components/Container';
+import {Container, styles} from '../Components/Container';
 import {Question} from '../Components/Question';
 import {Answer} from '../Components/Answer';
 import {CorrectTotal} from '../Components/CorrectTotal';
-import {styles} from '../Components/Container';
 import computers from '../data/computers';
+
 const question = computers[0].question;
 const answers = computers[0].answers;
 
@@ -26,5 +26,11 @@ class Home extends Component {
     );
   }
 }
+const mapStateToProps = (state) => {
+  const {totalCount} = state;
+  return {
+    totalCount,
+  };
+};
 
-export default connect()(Home);
+export default connect(mapStateToProps)(Home);

@@ -7,7 +7,7 @@ class Answer extends Component {
     const {answers} = this.props;
     return (
       <View style={styles.container}>
-        {answers.map(answer => (
+        {answers.map((answer) => (
           <TouchableOpacity style={styles.button} key={answer.id}>
             <Text style={styles.text}>{answer.text}</Text>
           </TouchableOpacity>
