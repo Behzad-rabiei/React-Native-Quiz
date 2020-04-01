@@ -4,7 +4,7 @@ import {SafeAreaView, StatusBar, View} from 'react-native';
 import {Container} from '../Components/Container';
 import {Question} from '../Components/Question';
 import {Answer} from '../Components/Answer';
-import {PageNumber} from '../Components/PageNumber';
+import {CorrectTotal} from '../Components/CorrectTotal';
 import {styles} from '../Components/Container';
 import computers from '../data/computers';
 const question = computers[0].question;
@@ -20,15 +20,11 @@ class Home extends Component {
             <Question question={question} />
             <Answer answers={answers} />
           </View>
-          <PageNumber number="0/3" />
+          <CorrectTotal totalCount={0} />
         </SafeAreaView>
       </Container>
     );
   }
 }
 
-const mapStateToProps = state => {
-  const {correctCount, totalCount} = state;
-  return {correctCount, totalCount};
-};
-export default connect(mapStateToProps)(Home);
+export default connect()(Home);
