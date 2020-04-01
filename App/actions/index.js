@@ -1,4 +1,8 @@
-import {SET_TOTALCOUNT, CORRECTCOUNT_PLUS} from './actionsType';
+import {
+  SET_TOTALCOUNT,
+  CORRECTCOUNT_PLUS,
+  ACTIVE_QUESTION_INDEX_PLUS,
+} from './actionsType';
 
 export const setTotalCount = (number) => {
   return {
@@ -9,5 +13,11 @@ export const setTotalCount = (number) => {
 export const correctCountPlus = () => {
   return {
     type: CORRECTCOUNT_PLUS,
+  };
+};
+
+export const ActiveQuestionIndexPlus = () => {
+  return {
+    type: ACTIVE_QUESTION_INDEX_PLUS,
   };
 };

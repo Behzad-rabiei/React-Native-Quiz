@@ -1,4 +1,8 @@
-import {SET_TOTALCOUNT, CORRECTCOUNT_PLUS} from '../actions/actionsType';
+import {
+  SET_TOTALCOUNT,
+  CORRECTCOUNT_PLUS,
+  ACTIVE_QUESTION_INDEX_PLUS,
+} from '../actions/actionsType';
 
 const initialState = {
   correctCount: 0,
@@ -18,6 +22,12 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         correctCount: state.correctCount + 1,
+      };
+    }
+    case ACTIVE_QUESTION_INDEX_PLUS: {
+      return {
+        ...state,
+        activeQuestionIndex: state.activeQuestionIndex + 1,
       };
     }
     default:
