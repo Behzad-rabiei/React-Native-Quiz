@@ -8,21 +8,24 @@ import {CorrectTotal} from '../Components/CorrectTotal';
 import {setTotalCount} from '../actions/index';
 import computers from '../data/computers';
 
-const question = computers[0].question;
-const answers = computers[0].answers;
-
 class Home extends Component {
   render() {
-    const {totalCount, correctCount, dispatch} = this.props;
+    const {
+      totalCount,
+      correctCount,
+      dispatch,
+      activeQuestionIndex,
+    } = this.props;
+    const question = computers[activeQuestionIndex].question;
+    const answers = computers[activeQuestionIndex].answers;
     dispatch(setTotalCount(computers.length));
-
     return (
       <Container>
         <StatusBar barStyle="dark-content" />
         <SafeAreaView style={styles.safeArea}>
           <View>
             <Question question={question} />
-            <Answer answers={answers} />
+            <Answer answers={answers} length={computers.length} />
           </View>
           <CorrectTotal totalCount={`${correctCount}/${totalCount}`} />
         </SafeAreaView>
@@ -31,10 +34,11 @@ class Home extends Component {
   }
 }
 const mapStateToProps = (state) => {
-  const {totalCount, correctCount} = state;
+  const {totalCount, correctCount, activeQuestionIndex} = state;
   return {
     totalCount,
     correctCount,
+    activeQuestionIndex,
   };
 };
 

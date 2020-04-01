@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {View, Text, TouchableOpacity} from 'react-native';
-import {correctCountPlus} from '../../actions/index';
+import {correctCountPlus, ActiveQuestionIndexPlus} from '../../actions/index';
 import styles from './styles';
 
 class Answer extends Component {
@@ -10,6 +10,7 @@ class Answer extends Component {
     if (correct) {
       dispatch(correctCountPlus());
     }
+    dispatch(ActiveQuestionIndexPlus());
   };
 
   render() {
