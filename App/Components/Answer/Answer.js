@@ -1,16 +1,24 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {View, Text, TouchableOpacity} from 'react-native';
-import {correctCountPlus, ActiveQuestionIndexPlus} from '../../actions/index';
+import {
+  correctCountPlus,
+  ActiveQuestionIndexPlus,
+  resetActiveQuestionIndex,
+} from '../../actions/index';
 import styles from './styles';
 
 class Answer extends Component {
   handleOnPress = (correct) => {
-    const {dispatch} = this.props;
+    const {dispatch, length, activeQuestionIndex} = this.props;
     if (correct) {
       dispatch(correctCountPlus());
     }
-    dispatch(ActiveQuestionIndexPlus());
+    if (activeQuestionIndex + 1 >= length) {
+      dispatch(resetActiveQuestionIndex());
+    } else {
+      dispatch(ActiveQuestionIndexPlus());
+    }
   };
 
   render() {
@@ -29,5 +37,10 @@ class Answer extends Component {
     );
   }
 }
-
-export default connect()(Answer);
+const mapStateToProps = (state) => {
+  const {activeQuestionIndex} = state;
+  return {
+    activeQuestionIndex,
+  };
+};
+export default connect(mapStateToProps)(Answer);
