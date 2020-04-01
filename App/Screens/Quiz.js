@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
 import {SafeAreaView, StatusBar, View} from 'react-native';
 import {Container} from '../Components/Container';
 import {Question} from '../Components/Question';
@@ -25,4 +26,9 @@ class Home extends Component {
     );
   }
 }
-export default Home;
+
+const mapStateToProps = state => {
+  const {correctCount, totalCount} = state;
+  return {correctCount, totalCount};
+};
+export default connect(mapStateToProps)(Home);
