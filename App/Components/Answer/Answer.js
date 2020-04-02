@@ -5,20 +5,33 @@ import {
   correctCountPlus,
   ActiveQuestionIndexPlus,
   resetActiveQuestionIndex,
+  setAnswerd,
+  setAnswerCorrect,
 } from '../../actions/index';
 import styles from './styles';
 
 class Answer extends Component {
-  handleOnPress = (correct) => {
+  nextQuestion = () => {
     const {dispatch, length, activeQuestionIndex} = this.props;
-    if (correct) {
-      dispatch(correctCountPlus());
-    }
+
+    dispatch(setAnswerd(false));
+    dispatch(setAnswerCorrect(false));
+
     if (activeQuestionIndex + 1 >= length) {
       dispatch(resetActiveQuestionIndex());
     } else {
       dispatch(ActiveQuestionIndexPlus());
     }
+  };
+
+  handleOnPress = (correct) => {
+    const {dispatch} = this.props;
+    dispatch(setAnswerd(true));
+    if (correct) {
+      dispatch(correctCountPlus());
+      dispatch(setAnswerCorrect(true));
+    }
+    setTimeout(() => this.nextQuestion(), 750);
   };
 
   render() {

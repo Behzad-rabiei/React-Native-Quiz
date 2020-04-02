@@ -3,6 +3,8 @@ import {
   CORRECTCOUNT_PLUS,
   ACTIVE_QUESTION_INDEX_PLUS,
   RESET_ACTIVE_QUESTION_INDEX,
+  SET_ANSWER_CORRECT,
+  SET_ANSWERED,
 } from '../actions/actionsType';
 
 const initialState = {
@@ -39,6 +41,19 @@ const rootReducer = (state = initialState, action) => {
         activeQuestionIndex: 0,
       };
     }
+    case SET_ANSWERED: {
+      return {
+        ...state,
+        answerd: action.value,
+      };
+    }
+    case SET_ANSWER_CORRECT: {
+      return {
+        ...state,
+        answerCorrect: action.value,
+      };
+    }
+
     default:
       return state;
   }

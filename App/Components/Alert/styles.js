@@ -13,13 +13,15 @@ export default EStyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  redCircle: {
-    backgroundColor: '$orangered',
+  circle: {
     width: screen.width / 2,
     height: screen.width / 2,
     borderRadius: screen.width,
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  redCircle: {
+    backgroundColor: '$orangered',
   },
   greenCircle: {
     backgroundColor: '$limegreen',

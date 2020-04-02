@@ -16,6 +16,8 @@ class Home extends Component {
       correctCount,
       dispatch,
       activeQuestionIndex,
+      answerd,
+      answerCorrect,
     } = this.props;
     const question = computers[activeQuestionIndex].question;
     const answers = computers[activeQuestionIndex].answers;
@@ -30,17 +32,25 @@ class Home extends Component {
           </View>
           <CorrectTotal totalCount={`${correctCount}/${totalCount}`} />
         </SafeAreaView>
-        <Alert />
+        <Alert answerd={answerd} answerCorrect={answerCorrect} />
       </Container>
     );
   }
 }
 const mapStateToProps = (state) => {
-  const {totalCount, correctCount, activeQuestionIndex} = state;
+  const {
+    totalCount,
+    correctCount,
+    activeQuestionIndex,
+    answerd,
+    answerCorrect,
+  } = state;
   return {
     totalCount,
     correctCount,
     activeQuestionIndex,
+    answerd,
+    answerCorrect,
   };
 };
 
