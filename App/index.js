@@ -8,6 +8,8 @@ EStyleSheet.build({
   $deepskyblue: '#00bfff',
   $white: '#ffffff',
   $answer: 'rgba(255,255,255,.3)',
+  $orangered: '#ff4500',
+  $limegreen: '#32cd32',
 });
 
 export default () => (
