@@ -6,6 +6,7 @@ import {Question} from '../Components/Question';
 import {Answer} from '../Components/Answer';
 import {CorrectTotal} from '../Components/CorrectTotal';
 import {setTotalCount} from '../actions/index';
+import {Alert} from '../Components/Alert';
 import computers from '../data/computers';
 
 class Home extends Component {
@@ -29,6 +30,7 @@ class Home extends Component {
           </View>
           <CorrectTotal totalCount={`${correctCount}/${totalCount}`} />
         </SafeAreaView>
+        <Alert />
       </Container>
     );
   }
