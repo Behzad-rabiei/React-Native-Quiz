@@ -3,6 +3,8 @@ import {
   CORRECTCOUNT_PLUS,
   ACTIVE_QUESTION_INDEX_PLUS,
   RESET_ACTIVE_QUESTION_INDEX,
+  SET_ANSWERED,
+  SET_ANSWER_CORRECT,
 } from './actionsType';
 
 export const setTotalCount = (number) => {
@@ -25,5 +27,17 @@ export const ActiveQuestionIndexPlus = () => {
 export const resetActiveQuestionIndex = () => {
   return {
     type: RESET_ACTIVE_QUESTION_INDEX,
+  };
+};
+export const setAnswerd = (flag) => {
+  return {
+    type: SET_ANSWERED,
+    value: flag,
+  };
+};
+export const setAnswerCorrect = (flag) => {
+  return {
+    type: SET_ANSWER_CORRECT,
+    value: flag,
   };
 };

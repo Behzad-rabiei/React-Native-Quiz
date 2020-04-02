@@ -9,6 +9,8 @@ const initialState = {
   correctCount: 0,
   totalCount: 0,
   activeQuestionIndex: 0,
+  answerd: false,
+  answerCorrect: false,
 };
 
 const rootReducer = (state = initialState, action) => {
