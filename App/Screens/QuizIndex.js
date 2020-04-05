@@ -3,7 +3,7 @@ import {Button} from 'react-native';
 import {Container} from '../Components/Container';
 
 const QuizIndex = () => (
-  <Container>
+  <Container QuizIndex>
     <Button title="go to quiz page" />
   </Container>
 );

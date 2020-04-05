@@ -11,4 +11,8 @@ export default EStyleSheet.create({
     marginTop: 100,
     justifyContent: 'space-between',
   },
+  QuizIndex: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
 });
