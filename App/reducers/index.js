@@ -5,12 +5,14 @@ import {
   RESET_ACTIVE_QUESTION_INDEX,
   SET_ANSWER_CORRECT,
   SET_ANSWERED,
+  SET_CATEGORY,
 } from '../actions/actionsType';
 
 const initialState = {
   correctCount: 0,
   totalCount: 0,
   activeQuestionIndex: 0,
+  category: '',
   answerd: false,
   answerCorrect: false,
 };
@@ -51,6 +53,12 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         answerCorrect: action.value,
+      };
+    }
+    case SET_CATEGORY: {
+      return {
+        ...state,
+        category: action.value,
       };
     }
 

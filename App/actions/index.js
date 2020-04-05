@@ -5,6 +5,7 @@ import {
   RESET_ACTIVE_QUESTION_INDEX,
   SET_ANSWERED,
   SET_ANSWER_CORRECT,
+  SET_CATEGORY,
 } from './actionsType';
 
 export const setTotalCount = (number) => {
@@ -39,5 +40,11 @@ export const setAnswerCorrect = (flag) => {
   return {
     type: SET_ANSWER_CORRECT,
     value: flag,
+  };
+};
+export const setCategory = (category) => {
+  return {
+    type: SET_CATEGORY,
+    value: category,
   };
 };
