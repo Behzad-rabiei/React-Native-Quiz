@@ -16,4 +16,13 @@ export default EStyleSheet.create({
     paddingHorizontal: 0,
     backgroundColor: '$white',
   },
+  space: {
+    backgroundColor: '$darkslateblue',
+  },
+  western: {
+    backgroundColor: '$peru',
+  },
+  computer: {
+    backgroundColor: '$lightslategrey',
+  },
 });

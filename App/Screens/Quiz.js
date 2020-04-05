@@ -24,32 +24,36 @@ class Home extends Component {
     } = this.props;
     let question;
     let answers;
+    let length;
     switch (category) {
       case 'Space': {
         question = Space[activeQuestionIndex].question;
         answers = Space[activeQuestionIndex].answers;
+        length = Space.length;
         break;
       }
       case 'Western': {
         question = Western[activeQuestionIndex].question;
         answers = Western[activeQuestionIndex].answers;
+        length = Western.length;
         break;
       }
       case 'Computer': {
         question = Computers[activeQuestionIndex].question;
         answers = Computers[activeQuestionIndex].answers;
+        length = Computers.length;
         break;
       }
       default:
     }
     dispatch(setTotalCount(category.length));
     return (
-      <Container>
+      <Container backgroundColor={category}>
         <StatusBar barStyle="dark-content" />
         <SafeAreaView style={styles.safeArea}>
           <View>
             <Question question={question} />
-            <Answer answers={answers} length={category.length} />
+            <Answer answers={answers} length={length} />
           </View>
           <CorrectTotal totalCount={`${correctCount}/${totalCount}`} />
         </SafeAreaView>
