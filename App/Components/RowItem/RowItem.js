@@ -1,11 +1,14 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
 import {TouchableOpacity, View, Text} from 'react-native';
+import {setCategory} from '../../actions/index';
 import styles from './styles';
 
 class RowItem extends Component {
   handleOnPress = () => {
-    const {navigation} = this.props;
+    const {navigation, dispatch, categoryName} = this.props;
     navigation.navigate('Quiz');
+    dispatch(setCategory(categoryName));
   };
 
   render() {
@@ -36,4 +39,4 @@ class RowItem extends Component {
   }
 }
 
-export default RowItem;
+export default connect()(RowItem);

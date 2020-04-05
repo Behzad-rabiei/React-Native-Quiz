@@ -7,7 +7,9 @@ import {Answer} from '../Components/Answer';
 import {CorrectTotal} from '../Components/CorrectTotal';
 import {setTotalCount} from '../actions/index';
 import {Alert} from '../Components/Alert';
-import computers from '../data/computers';
+import Computers from '../data/computers';
+import Space from '../data/space';
+import Western from '../data/westerns';
 
 class Home extends Component {
   render() {
@@ -18,17 +20,36 @@ class Home extends Component {
       activeQuestionIndex,
       answerd,
       answerCorrect,
+      category,
     } = this.props;
-    const question = computers[activeQuestionIndex].question;
-    const answers = computers[activeQuestionIndex].answers;
-    dispatch(setTotalCount(computers.length));
+    let question;
+    let answers;
+    switch (category) {
+      case 'Space': {
+        question = Space[activeQuestionIndex].question;
+        answers = Space[activeQuestionIndex].answers;
+        break;
+      }
+      case 'Western': {
+        question = Western[activeQuestionIndex].question;
+        answers = Western[activeQuestionIndex].answers;
+        break;
+      }
+      case 'Computer': {
+        question = Computers[activeQuestionIndex].question;
+        answers = Computers[activeQuestionIndex].answers;
+        break;
+      }
+      default:
+    }
+    dispatch(setTotalCount(category.length));
     return (
       <Container>
         <StatusBar barStyle="dark-content" />
         <SafeAreaView style={styles.safeArea}>
           <View>
             <Question question={question} />
-            <Answer answers={answers} length={computers.length} />
+            <Answer answers={answers} length={category.length} />
           </View>
           <CorrectTotal totalCount={`${correctCount}/${totalCount}`} />
         </SafeAreaView>
@@ -44,6 +65,7 @@ const mapStateToProps = (state) => {
     activeQuestionIndex,
     answerd,
     answerCorrect,
+    category,
   } = state;
   return {
     totalCount,
@@ -51,6 +73,7 @@ const mapStateToProps = (state) => {
     activeQuestionIndex,
     answerd,
     answerCorrect,
+    category,
   };
 };
 
