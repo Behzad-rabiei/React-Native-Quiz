@@ -12,7 +12,8 @@ export default EStyleSheet.create({
     justifyContent: 'space-between',
   },
   QuizIndex: {
-    justifyContent: 'center',
-    alignItems: 'center',
+    flex: 1,
+    paddingHorizontal: 0,
+    backgroundColor: '$white',
   },
 });

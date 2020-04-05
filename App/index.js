@@ -7,9 +7,12 @@ import Navigator from './config/routes';
 EStyleSheet.build({
   $deepskyblue: '#00bfff',
   $white: '#ffffff',
-  $answer: 'rgba(255,255,255,.3)',
+  $opacity: 'rgba(255,255,255,.3)',
   $orangered: '#ff4500',
   $limegreen: '#32cd32',
+  $lightslategrey: '#778899',
+  $peru: '#cd853f',
+  $darkslateblue: '#483d8b',
 });
 
 export default () => (
