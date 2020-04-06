@@ -20,3 +20,24 @@ export const setContainerStyle = (QuizIndex, backgroundColor, styles) => {
   }
   return containerStyle;
 };
+
+export const setRowItemContainerStyle = (props, styles) => {
+  const {categoryName} = props;
+  const containerStyle = [styles.container];
+  switch (categoryName) {
+    case 'Space': {
+      containerStyle.push(styles.space);
+      break;
+    }
+    case 'Computer': {
+      containerStyle.push(styles.computer);
+      break;
+    }
+    case 'Western': {
+      containerStyle.push(styles.western);
+      break;
+    }
+    default:
+  }
+  return containerStyle;
+};

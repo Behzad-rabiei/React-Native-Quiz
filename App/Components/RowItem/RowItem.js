@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {TouchableOpacity, View, Text} from 'react-native';
 import {setCategory} from '../../actions/index';
+import {setRowItemContainerStyle} from '../../util/handleStyles';
 import styles from './styles';
 
 class RowItem extends Component {
@@ -13,22 +14,7 @@ class RowItem extends Component {
 
   render() {
     const {categoryName} = this.props;
-    const containerStyle = [styles.container];
-    switch (categoryName) {
-      case 'Space': {
-        containerStyle.push(styles.space);
-        break;
-      }
-      case 'Computer': {
-        containerStyle.push(styles.computer);
-        break;
-      }
-      case 'Western': {
-        containerStyle.push(styles.western);
-        break;
-      }
-      default:
-    }
+    const containerStyle = setRowItemContainerStyle(this.props, styles);
     return (
       <TouchableOpacity onPress={() => this.handleOnPress()}>
         <View style={containerStyle}>
