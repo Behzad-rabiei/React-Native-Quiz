@@ -41,3 +41,16 @@ export const setRowItemContainerStyle = (props, styles) => {
   }
   return containerStyle;
 };
+
+export const setCircleStyle = (answerCorrect, styles) => {
+  const circleStyle = [styles.circle];
+  if (answerCorrect) {
+    circleStyle.push(styles.greenCircle);
+  } else {
+    circleStyle.push(styles.redCircle);
+  }
+  const icon = answerCorrect
+    ? require('../../assets/check.png')
+    : require('../../assets/close.png');
+  return {circleStyle, icon};
+};

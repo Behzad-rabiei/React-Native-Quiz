@@ -1,21 +1,13 @@
 import React from 'react';
 import {View, Image} from 'react-native';
+import {setCircleStyle} from '../../util/handleStyles';
 import styles from './styles';
 
 const Alert = ({answerd, answerCorrect}) => {
   if (!answerd) {
     return null;
   }
-  const circleStyle = [styles.circle];
-  if (answerCorrect) {
-    circleStyle.push(styles.greenCircle);
-  } else {
-    circleStyle.push(styles.redCircle);
-  }
-  const icon = answerCorrect
-    ? require('../../../assets/check.png')
-    : require('../../../assets/close.png');
-
+  const {circleStyle, icon} = setCircleStyle(answerCorrect, styles);
   return (
     <View style={styles.container}>
       <View style={circleStyle}>
