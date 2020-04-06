@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {TouchableOpacity, View, Text} from 'react-native';
-import {setCategory} from '../../actions/index';
+import {setCategory, resetCorrectCount} from '../../actions/index';
 import {setRowItemContainerStyle} from '../../util/handleStyles';
 import styles from './styles';
 
@@ -10,6 +10,7 @@ class RowItem extends Component {
     const {navigation, dispatch, categoryName} = this.props;
     navigation.navigate('Quiz', {title: categoryName});
     dispatch(setCategory(categoryName));
+    dispatch(resetCorrectCount());
   };
 
   render() {
