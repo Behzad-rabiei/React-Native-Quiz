@@ -7,9 +7,7 @@ import {Answer} from '../Components/Answer';
 import {CorrectTotal} from '../Components/CorrectTotal';
 import {setTotalCount} from '../actions/index';
 import {Alert} from '../Components/Alert';
-import Computers from '../data/computers';
-import Space from '../data/space';
-import Western from '../data/westerns';
+import handleCategory from '../util/handleCategory';
 
 class Home extends Component {
   render() {
@@ -17,36 +15,12 @@ class Home extends Component {
       totalCount,
       correctCount,
       dispatch,
-      activeQuestionIndex,
       answerd,
       answerCorrect,
       category,
     } = this.props;
-    let question;
-    let answers;
-    let length;
-    switch (category) {
-      case 'Space': {
-        question = Space[activeQuestionIndex].question;
-        answers = Space[activeQuestionIndex].answers;
-        length = Space.length;
-        break;
-      }
-      case 'Western': {
-        question = Western[activeQuestionIndex].question;
-        answers = Western[activeQuestionIndex].answers;
-        length = Western.length;
-        break;
-      }
-      case 'Computer': {
-        question = Computers[activeQuestionIndex].question;
-        answers = Computers[activeQuestionIndex].answers;
-        length = Computers.length;
-        break;
-      }
-      default:
-    }
-    dispatch(setTotalCount(category.length));
+    const {question, answers, length} = handleCategory(this.props);
+    dispatch(setTotalCount(length));
     return (
       <Container backgroundColor={category}>
         <StatusBar barStyle="dark-content" />
