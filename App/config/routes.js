@@ -9,7 +9,11 @@ const MainStack = createStackNavigator();
 const Navigator = () => (
   <NavigationContainer>
     <MainStack.Navigator initialRouteName="QuizIndex">
-      <MainStack.Screen name="Quiz" component={Quiz} />
+      <MainStack.Screen
+        name="Quiz"
+        component={Quiz}
+        options={({route}) => ({title: route.params.title})}
+      />
       <MainStack.Screen
         name="QuizIndex"
         component={QuizIndex}
