@@ -1,27 +1,10 @@
 import React from 'react';
 import {View} from 'react-native';
 import styles from './styles';
+import {setContainerStyle} from '../../util/handleStyles';
 
 const Container = ({children, QuizIndex, backgroundColor}) => {
-  const containerStyle = [styles.container];
-  if (QuizIndex) {
-    containerStyle.push(styles.QuizIndex);
-  }
-  switch (backgroundColor) {
-    case 'Space': {
-      containerStyle.push(styles.space);
-      break;
-    }
-    case 'Western': {
-      containerStyle.push(styles.western);
-      break;
-    }
-    case 'Computer': {
-      containerStyle.push(styles.computer);
-      break;
-    }
-    default:
-  }
+  const containerStyle = setContainerStyle(QuizIndex, backgroundColor, styles);
   return <View style={containerStyle}>{children}</View>;
 };
 
