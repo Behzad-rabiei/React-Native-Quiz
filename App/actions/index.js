@@ -1,6 +1,7 @@
 import {
   SET_TOTALCOUNT,
-  CORRECTCOUNT_PLUS,
+  CORRECT_COUNT_PLUS,
+  RESET_CORRECT_COUT,
   ACTIVE_QUESTION_INDEX_PLUS,
   RESET_ACTIVE_QUESTION_INDEX,
   SET_ANSWERED,
@@ -16,7 +17,12 @@ export const setTotalCount = (number) => {
 };
 export const correctCountPlus = () => {
   return {
-    type: CORRECTCOUNT_PLUS,
+    type: CORRECT_COUNT_PLUS,
+  };
+};
+export const resetCorrectCount = () => {
+  return {
+    type: RESET_CORRECT_COUT,
   };
 };
 
