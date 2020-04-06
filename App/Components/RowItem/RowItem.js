@@ -7,8 +7,8 @@ import styles from './styles';
 
 class RowItem extends Component {
   handleOnPress = () => {
-    const {navigation, dispatch, categoryName} = this.props;
-    navigation.navigate('Quiz', {title: categoryName});
+    const {navigation, dispatch, categoryName, categoryColor} = this.props;
+    navigation.navigate('Quiz', {title: categoryName, color: categoryColor});
     dispatch(setCategory(categoryName));
     dispatch(resetCorrectCount());
   };

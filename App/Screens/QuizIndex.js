@@ -7,9 +7,21 @@ const QuizIndex = ({navigation}) => (
   <ScrollView>
     <Container QuizIndex>
       <StatusBar barStyle="dark-content" />
-      <RowItem categoryName="Space" navigation={navigation} />
-      <RowItem categoryName="Western" navigation={navigation} />
-      <RowItem categoryName="Computer" navigation={navigation} />
+      <RowItem
+        categoryName="Space"
+        navigation={navigation}
+        categoryColor="#483d8b"
+      />
+      <RowItem
+        categoryName="Western"
+        navigation={navigation}
+        categoryColor="#cd853f"
+      />
+      <RowItem
+        categoryName="Computer"
+        navigation={navigation}
+        categoryColor="#778899"
+      />
     </Container>
   </ScrollView>
 );

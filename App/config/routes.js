@@ -12,7 +12,14 @@ const Navigator = () => (
       <MainStack.Screen
         name="Quiz"
         component={Quiz}
-        options={({route}) => ({title: route.params.title})}
+        options={({route}) => ({
+          title: route.params.title,
+          headerStyle: {backgroundColor: route.params.color},
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        })}
       />
       <MainStack.Screen
         name="QuizIndex"
