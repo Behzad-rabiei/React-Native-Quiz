@@ -7,6 +7,7 @@ import {
   SET_ANSWER_CORRECT,
   SET_ANSWERED,
   SET_CATEGORY,
+  SET_CATEGORY_COLOR,
 } from '../actions/actionsType';
 
 const initialState = {
@@ -14,6 +15,7 @@ const initialState = {
   totalCount: 0,
   activeQuestionIndex: 0,
   category: '',
+  categoryColor: '',
   answerd: false,
   answerCorrect: false,
 };
@@ -66,6 +68,12 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         category: action.value,
+      };
+    }
+    case SET_CATEGORY_COLOR: {
+      return {
+        ...state,
+        categoryColor: action.value,
       };
     }
 

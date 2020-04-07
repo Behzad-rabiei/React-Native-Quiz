@@ -7,6 +7,7 @@ import {
   SET_ANSWERED,
   SET_ANSWER_CORRECT,
   SET_CATEGORY,
+  SET_CATEGORY_COLOR,
 } from './actionsType';
 
 export const setTotalCount = (number) => {
@@ -52,5 +53,11 @@ export const setCategory = (category) => {
   return {
     type: SET_CATEGORY,
     value: category,
+  };
+};
+export const setCategoryColor = (color) => {
+  return {
+    type: SET_CATEGORY_COLOR,
+    vlaue: color,
   };
 };
