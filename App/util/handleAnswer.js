@@ -7,13 +7,14 @@ import {
 } from '../actions/index';
 
 export const nextQuestion = (props) => {
-  const {dispatch, length, activeQuestionIndex} = props;
+  const {dispatch, length, activeQuestionIndex, navigation} = props;
 
   dispatch(setAnswerd(false));
   dispatch(setAnswerCorrect(false));
 
   if (activeQuestionIndex + 1 >= length) {
     dispatch(resetActiveQuestionIndex());
+    navigation.navigate('QuizIndex');
   } else {
     dispatch(ActiveQuestionIndexPlus());
   }
