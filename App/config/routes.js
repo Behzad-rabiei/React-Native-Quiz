@@ -30,14 +30,9 @@ const Navigator = () => (
       <MainStack.Screen
         name="Summery"
         component={Summery}
-        options={({route}) => ({
-          title: 'Quiz Summery',
-          headerStyle: {backgroundColor: route.params.color},
-          headerTintColor: '#fff',
-          headerTitleStyle: {
-            fontWeight: 'bold',
-          },
-        })}
+        options={{
+          headerShown: false,
+        }}
       />
     </MainStack.Navigator>
   </NavigationContainer>

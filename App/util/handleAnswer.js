@@ -7,20 +7,15 @@ import {
 } from '../actions/index';
 
 export const nextQuestion = (props) => {
-  const {
-    dispatch,
-    length,
-    activeQuestionIndex,
-    navigation,
-    categoryColor,
-  } = props;
+  const {dispatch, length, activeQuestionIndex, navigation} = props;
 
   dispatch(setAnswerd(false));
   dispatch(setAnswerCorrect(false));
 
   if (activeQuestionIndex + 1 >= length) {
     dispatch(resetActiveQuestionIndex());
-    navigation.navigate('Summery', {color: categoryColor});
+    navigation.popToTop();
+    navigation.navigate('Summery');
   } else {
     dispatch(ActiveQuestionIndexPlus());
   }

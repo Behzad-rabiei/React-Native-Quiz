@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {Container} from '../Components/Container';
 import {SummeryText} from '../Components/SummeryText';
+import {NavButton} from '../Components/NavButton';
 
 class Summery extends Component {
   render() {
@@ -13,6 +14,7 @@ class Summery extends Component {
           totalCount={totalCount}
           correctCount={correctCount}
         />
+        <NavButton />
       </Container>
     );
   }
