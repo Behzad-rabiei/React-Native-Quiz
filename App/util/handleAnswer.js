@@ -14,7 +14,6 @@ export const nextQuestion = (props) => {
 
   if (activeQuestionIndex + 1 >= length) {
     dispatch(resetActiveQuestionIndex());
-    navigation.popToTop();
     navigation.navigate('Summery');
   } else {
     dispatch(ActiveQuestionIndexPlus());

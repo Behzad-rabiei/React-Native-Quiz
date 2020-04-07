@@ -6,7 +6,7 @@ import {NavButton} from '../Components/NavButton';
 
 class Summery extends Component {
   render() {
-    const {category, totalCount, correctCount} = this.props;
+    const {category, totalCount, correctCount, navigation} = this.props;
     return (
       <Container Summery backgroundColor={category}>
         <SummeryText
@@ -14,7 +14,7 @@ class Summery extends Component {
           totalCount={totalCount}
           correctCount={correctCount}
         />
-        <NavButton />
+        <NavButton navigation={navigation} />
       </Container>
     );
   }
