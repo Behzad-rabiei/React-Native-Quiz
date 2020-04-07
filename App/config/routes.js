@@ -9,7 +9,7 @@ const MainStack = createStackNavigator();
 
 const Navigator = () => (
   <NavigationContainer>
-    <MainStack.Navigator initialRouteName="Summery">
+    <MainStack.Navigator initialRouteName="QuizIndex">
       <MainStack.Screen
         name="Quiz"
         component={Quiz}
