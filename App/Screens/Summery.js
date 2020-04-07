@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
-import {Text} from 'react-native';
 import {Container} from '../Components/Container';
+import {SummeryText} from '../Components/SummeryText';
 
 class Summery extends Component {
   render() {
     return (
-      <Container>
-        <Text>Sallllllam</Text>
+      <Container Summery>
+        <SummeryText />
       </Container>
     );
   }

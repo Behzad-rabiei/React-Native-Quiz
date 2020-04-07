@@ -1,7 +1,15 @@
-export const setContainerStyle = (QuizIndex, backgroundColor, styles) => {
+export const setContainerStyle = (
+  QuizIndex,
+  backgroundColor,
+  Summery,
+  styles,
+) => {
   const containerStyle = [styles.container];
   if (QuizIndex) {
     containerStyle.push(styles.QuizIndex);
+  }
+  if (Summery) {
+    containerStyle.push(styles.Summery);
   }
   switch (backgroundColor) {
     case 'Space': {

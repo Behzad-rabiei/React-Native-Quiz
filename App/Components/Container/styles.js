@@ -16,6 +16,11 @@ export default EStyleSheet.create({
     paddingHorizontal: 0,
     backgroundColor: '$white',
   },
+  Summery: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   space: {
     backgroundColor: '$darkslateblue',
   },
