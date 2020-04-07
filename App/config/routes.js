@@ -3,12 +3,13 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import Quiz from '../Screens/Quiz';
 import QuizIndex from '../Screens/QuizIndex';
+import Summery from '../Screens/Summery';
 
 const MainStack = createStackNavigator();
 
 const Navigator = () => (
   <NavigationContainer>
-    <MainStack.Navigator initialRouteName="QuizIndex">
+    <MainStack.Navigator initialRouteName="Summery">
       <MainStack.Screen
         name="Quiz"
         component={Quiz}
@@ -26,6 +27,7 @@ const Navigator = () => (
         component={QuizIndex}
         options={{title: 'Quizzes'}}
       />
+      <MainStack.Screen name="Summery" component={Summery} />
     </MainStack.Navigator>
   </NavigationContainer>
 );
