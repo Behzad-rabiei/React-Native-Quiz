@@ -58,6 +58,6 @@ export const setCategory = (category) => {
 export const setCategoryColor = (color) => {
   return {
     type: SET_CATEGORY_COLOR,
-    vlaue: color,
+    value: color,
   };
 };
