@@ -22,9 +22,10 @@ class Answer extends Component {
   }
 }
 const mapStateToProps = (state) => {
-  const {activeQuestionIndex} = state;
+  const {activeQuestionIndex, categoryColor} = state;
   return {
     activeQuestionIndex,
+    categoryColor,
   };
 };
 export default connect(mapStateToProps)(Answer);

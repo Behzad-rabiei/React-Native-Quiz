@@ -27,7 +27,18 @@ const Navigator = () => (
         component={QuizIndex}
         options={{title: 'Quizzes'}}
       />
-      <MainStack.Screen name="Summery" component={Summery} />
+      <MainStack.Screen
+        name="Summery"
+        component={Summery}
+        options={({route}) => ({
+          title: 'Quiz Summery',
+          headerStyle: {backgroundColor: route.params.color},
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        })}
+      />
     </MainStack.Navigator>
   </NavigationContainer>
 );

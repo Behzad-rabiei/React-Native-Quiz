@@ -14,8 +14,8 @@ const initialState = {
   correctCount: 0,
   totalCount: 0,
   activeQuestionIndex: 0,
-  category: '',
-  categoryColor: '',
+  category: null,
+  categoryColor: null,
   answerd: false,
   answerCorrect: false,
 };

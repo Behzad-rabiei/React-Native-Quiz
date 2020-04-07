@@ -5,6 +5,7 @@ import {
   setCategory,
   resetCorrectCount,
   resetActiveQuestionIndex,
+  setCategoryColor,
 } from '../../actions/index';
 import {setRowItemContainerStyle} from '../../util/handleStyles';
 import styles from './styles';
@@ -12,10 +13,11 @@ import styles from './styles';
 class RowItem extends Component {
   handleOnPress = () => {
     const {navigation, dispatch, categoryName, categoryColor} = this.props;
-    navigation.navigate('Quiz', {title: categoryName, color: categoryColor});
     dispatch(setCategory(categoryName));
+    dispatch(setCategoryColor(categoryColor));
     dispatch(resetCorrectCount());
     dispatch(resetActiveQuestionIndex());
+    navigation.navigate('Quiz', {title: categoryName, color: categoryColor});
   };
 
   render() {
