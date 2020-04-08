@@ -14,7 +14,7 @@ export default EStyleSheet.create({
   QuizIndex: {
     flex: 1,
     paddingHorizontal: 0,
-    backgroundColor: '$white',
+    backgroundColor: '$gainsboro',
   },
   Summery: {
     flex: 1,

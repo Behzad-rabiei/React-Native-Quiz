@@ -14,6 +14,7 @@ EStyleSheet.build({
   $lightslategrey: '#778899',
   $peru: '#cd853f',
   $darkslateblue: '#483d8b',
+  $gainsboro: '#dcdcdc',
 });
 
 export default () => (

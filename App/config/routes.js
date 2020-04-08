@@ -25,7 +25,7 @@ const Navigator = () => (
       <MainStack.Screen
         name="QuizIndex"
         component={QuizIndex}
-        options={{title: 'Quizzes'}}
+        options={{title: 'Quizzes', headerStyle: {backgroundColor: '#dcdcdc'}}}
       />
       <MainStack.Screen
         name="Summery"
