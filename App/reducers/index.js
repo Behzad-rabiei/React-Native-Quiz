@@ -1,5 +1,5 @@
 import {
-  SET_TOTALCOUNT,
+  SET_TOTAL_COUNT,
   CORRECT_COUNT_PLUS,
   RESET_CORRECT_COUT,
   ACTIVE_QUESTION_INDEX_PLUS,
@@ -22,7 +22,7 @@ const initialState = {
 
 const rootReducer = (state = initialState, action) => {
   switch (action.type) {
-    case SET_TOTALCOUNT: {
+    case SET_TOTAL_COUNT: {
       return {
         ...state,
         totalCount: action.value,

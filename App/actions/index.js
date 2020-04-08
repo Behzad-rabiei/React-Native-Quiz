@@ -1,5 +1,5 @@
 import {
-  SET_TOTALCOUNT,
+  SET_TOTAL_COUNT,
   CORRECT_COUNT_PLUS,
   RESET_CORRECT_COUT,
   ACTIVE_QUESTION_INDEX_PLUS,
@@ -12,7 +12,7 @@ import {
 
 export const setTotalCount = (number) => {
   return {
-    type: SET_TOTALCOUNT,
+    type: SET_TOTAL_COUNT,
     value: number,
   };
 };
