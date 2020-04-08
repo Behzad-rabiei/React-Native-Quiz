@@ -21,10 +21,5 @@ class Answer extends Component {
     );
   }
 }
-const mapStateToProps = (state) => {
-  const {activeQuestionIndex} = state;
-  return {
-    activeQuestionIndex,
-  };
-};
-export default connect(mapStateToProps)(Answer);
+
+export default connect()(Answer);

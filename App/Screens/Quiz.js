@@ -19,6 +19,7 @@ class Home extends Component {
       answerCorrect,
       category,
       navigation,
+      activeQuestionIndex,
     } = this.props;
     const {question, answers, length} = handleCategory(this.props);
     dispatch(setTotalCount(length));
@@ -28,7 +29,12 @@ class Home extends Component {
         <SafeAreaView style={styles.safeArea}>
           <View>
             <Question question={question} />
-            <Answer answers={answers} length={length} navigation={navigation} />
+            <Answer
+              answers={answers}
+              length={length}
+              navigation={navigation}
+              activeQuestionIndex={activeQuestionIndex}
+            />
           </View>
           <CorrectTotal totalCount={`${correctCount}/${totalCount}`} />
         </SafeAreaView>
