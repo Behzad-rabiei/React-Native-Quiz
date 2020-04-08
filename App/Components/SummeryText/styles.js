@@ -23,5 +23,6 @@ export default EStyleSheet.create({
     color: '$white',
     fontWeight: '600',
     paddingVertical: 20,
+    paddingHorizontal: 10,
   },
 });
