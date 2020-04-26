@@ -17,8 +17,10 @@ yarn install / npm install  (inside of project directory)
 ## Running
 
 ```bash
-inside of root project directory : react-native start
-open new terminal then inside of root project directory : react-native  run-ios/react-native  run-android
+inside of root project directory:
+react-native start
+open new terminal and inside of root project directory:
+react-native  run-ios/react-native  run-android
 ```
 
 ## Contributing
