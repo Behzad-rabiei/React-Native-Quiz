@@ -17,15 +17,8 @@ yarn install / npm install  (inside of project directory)
 ## Running
 
 ```bash
-yarn run ios/npm run ios or yarn run android/npm run android
-```
-
-Note: you can run app in your android or ios device
-
-```bash
-install expo app on your device
-yarn start / npm start
-scan QR Code
+inside of root project directory : react-native start
+open new terminal then inside of root project directory : react-native  run-ios/react-native  run-android
 ```
 
 ## Contributing
